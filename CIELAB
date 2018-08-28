@@ -1,0 +1,16 @@
+// Problem link:https://www.codechef.com/problems/CIELAB
+#include <iostream>
+
+using namespace std;
+
+int main()
+{ int a,b;
+  cin>>a>>b;
+  int c = a-b;
+  if(c%10>=2&&c%10<=9)
+     cout<<c-1;
+     else
+     cout<< c+1;
+
+    return 0;
+}
