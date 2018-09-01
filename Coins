@@ -1,0 +1,30 @@
+problem link : https://www.codechef.com/problems/COINS
+#include <iostream>
+
+#include <map>
+#include <algorithm>
+
+using namespace std;
+
+map<int, long long> d;
+
+long long function(int n){
+    if(n==0) return 0;
+    
+    if(d[n]!=0) return d[n];
+    
+    long long aux=function(n/2)+function(n/3)+function(n/4);
+    
+    if(aux>n) d[n]=aux;
+    else d[n]=n;
+    
+    return d[n];
+}
+
+int main(){    
+    int n;
+        
+    while(cin>>n) cout<<function(n)<<endl;
+    
+    return 0;
+}
