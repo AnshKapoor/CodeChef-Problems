@@ -1,0 +1,27 @@
+//problem link: https://www.codechef.com/problems/FLOW005
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a[6]= {1,2,5,10,50,100};
+    int t;
+    cin>>t;
+    for(int i=0;i<t;i++)
+    {  int counter=5;int ans=0;
+       int n;
+       cin>>n;
+       while(n!=0){
+        if(n>=a[counter])
+          {n-=a[counter];
+          ans++;}
+          else
+          counter--;
+       }
+       cout<<ans<<endl;
+
+
+    }
+    return 0;
+}
