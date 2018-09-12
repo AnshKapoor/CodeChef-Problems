@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+unsigned long int swap(unsigned long a,unsigned long b,unsigned long x){
+    if(a==x)
+    x=b;
+    else if(b==x)
+    x=a;
+    return x;
+}
+
+int main() {
+	// your code goes here
+	int t;
+	unsigned long int a,b,n,x,s;
+	cin>>t;
+	while(t--){
+	    cin>>n>>x>>s;
+	    while(s--){
+	        cin>>a>>b;
+	        x = swap(a,b,x);
+	    }
+	    cout<<x<<endl;
+	   }
+	return 0;
+}
