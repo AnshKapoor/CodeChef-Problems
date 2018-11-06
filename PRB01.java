@@ -1,36 +1,33 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class tester {
-	static boolean isPrime(long n) 
-    { 
-        // Corner case 
-        if (n <= 1) 
-            return false; 
-       
-        // Check from 2 to n-1 
-        for (int i = 2; i < n; i++) 
-            if (n % i == 0) 
-                return false; 
-       
-        return true; 
-    } 
+public class Main {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int t;
-		long  n;
-		Scanner s = new Scanner(System.in);
-		t= s.nextInt();
-		while(t!=-1) {
-			n =s.nextLong();
-			if(isPrime(n)) {
-				System.out.println("yes");
-			}
-			else System.out.println("no");
-			t--;
-		}
-		
-		
-	}
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int t = s.nextInt();
+        while (t-- > 0) {
+            int n = s.nextInt();
+            if ( isPrime(n)){
+                System.out.println("yes");
+            }else { 
+                System.out.println("no");
+            }
+        }
 
+    }
+
+    public static boolean isPrime(int n) {
+        if (n == 1 || (n % 2 == 0 && n != 2)) {
+            return false;
+        }
+
+        int sqrt = (int) Math.sqrt(n);
+        for (int i = 3; i <= sqrt; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+
+    }
 }
